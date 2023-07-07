@@ -13,3 +13,7 @@ TL-IPC40A云台摄像头云台控制http接口
 | 添加预置点位“1” | {"method":"do","preset":{"set_preset":{"name":"name","save_ptz":"1"}}} | 
 | 镜头遮罩 | {"method":"set","lens_mask":{"lens_mask_info":{"enabled":"on"}}} | 
 * 注：x范围有360度 y范围有180度
+
+### 摄像头控制鉴权
+* 发送登陆请求{"method": "do", "login": {"username": "admin", "password": "admin"}}
+* 返回鉴权码login_res["stok"]
