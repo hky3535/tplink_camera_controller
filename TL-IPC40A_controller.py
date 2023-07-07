@@ -4,7 +4,7 @@ import requests
 class TL_IPC40A:
     def __init__(self):
         # 初始化云台控制
-        self.camera_control_url = "http://192.168.10.77:80/"
+        self.camera_control_url = "http://192.168.1.10:80/"
         self.stok = self.init_stok()
         # 云台控制指令
         self.control_key_dict = {
@@ -37,15 +37,3 @@ class TL_IPC40A:
 if __name__ == '__main__':
     tl_ipc40a = TL_IPC40A()
     tl_ipc40a.main()
-
-# 其他参数:
-# PTZ to preset position      {"method":"do","preset":{"goto_preset": {"id": "1"}}}
-# PTZ by coord                {"method":"do","motor":{"move":{"x_coord":"10","y_coord":"0"}}}
-# PTZ horizontal by step      {"method":"do","motor":{"movestep":{"direction":"0"}}}
-# PTZ vertical by step        {"method":"do","motor":{"movestep":{"direction":"90"}}}
-# stop PTZ                    {"method":"do","motor":{"stop":"null"}}
-# add PTZ preset position     {"method":"do","preset":{"set_preset":{"name":"name","save_ptz":"1"}}}
-# lens mask                   {"method":"set","lens_mask":{"lens_mask_info":{"enabled":"on"}}}
-
-# {"method":"do","motor":{"move":{"x_coord":"10","y_coord":"10"}}}
-# x范围有360度 y范围有180度
